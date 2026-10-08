@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f766e" />
+  <title>الدكتور قرناش محمد | طبيب عام</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Tajawal", "Cairo", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f5fbfa;
+      color: #183b3a;
+      line-height: 1.8;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e3eeee;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: #0f766e;
+    }
+
+    .logo-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0f766e, #14b8a6);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(15,118,110,.2);
+    }
+
+    .logo small {
+      display: block;
+      color: #66807e;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #315451;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      color: #0f766e;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: #e8f6f4;
+      color: #0f766e;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 720px;
+      padding: 145px 20px 80px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(20,184,166,.15), transparent 28%),
+        radial-gradient(circle at 90% 70%, rgba(14,165,233,.12), transparent 25%),
+        linear-gradient(135deg, #effcf9, #f8ffff);
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 7px 14px;
+      border-radius: 30px;
+      background: #dff8f3;
+      color: #08756e;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.15;
+      color: #123c3a;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #0f766e;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 19px;
+      color: #587370;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 13px 22px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: .25s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      color: white;
+      box-shadow: 0 10px 25px rgba(15,118,110,.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(15,118,110,.3);
+    }
+
+    .btn-light {
+      background: white;
+      color: #0f766e;
+      border: 1px solid #d9ecea;
+    }
+
+    .btn-light:hover {
+      background: #edf9f7;
+    }
+
+    .doctor-card {
+      background: white;
+      padding: 35px;
+      border-radius: 30px;
+      box-shadow: 0 25px 70px rgba(26,75,72,.12);
+      text-align: center;
+      border: 1px solid #e4f0ef;
+    }
+
+    .doctor-avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ccfbf1, #dff7ff);
+      display: grid;
+      place-items: center;
+      font-size: 70px;
+      border: 8px solid white;
+      box-shadow: 0 10px 35px rgba(15,118,110,.12);
+    }
+
+    .doctor-card h2 {
+      color: #163d3a;
+      margin-bottom: 5px;
+    }
+
+    .doctor-card p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .status {
+      display: inline-flex;
+      margin-top: 15px;
+      background: #e9f9ef;
+      color: #178143;
+      padding: 6px 13px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      color: #0f766e;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #173f3c;
+      margin-top: 5px;
+    }
+
+    .section-title p {
+      color: #6a8280;
+      max-width: 650px;
+      margin: 8px auto;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services {
+      background: white;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      padding: 30px;
+      border: 1px solid #e4eeee;
+      border-radius: 22px;
+      background: #fff;
+      transition: .3s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(31,79,76,.1);
+      border-color: #bce6e1;
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      background: #e5f8f5;
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+
+    .service h3 {
+      color: #17423f;
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: #718684;
+      font-size: 14px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 0 15px 50px rgba(34,77,74,.07);
+    }
+
+    .features {
+      margin-top: 25px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .check {
+      width: 30px;
+      height: 30px;
+      background: #dff7f2;
+      color: #0f766e;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+    }
+
+    /* ================= APPOINTMENT ================= */
+
+    .appointment {
+      background: linear-gradient(135deg, #083f3c, #0f766e);
+      color: white;
+    }
+
+    .appointment .section-title h2,
+    .appointment .section-title p,
+    .appointment .section-title span {
+      color: white;
+    }
+
+    .form-box {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      color: #173f3c;
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.15);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #dcebea;
+      border-radius: 12px;
+      outline: none;
+      background: #fbfefe;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #0f766e;
+      box-shadow: 0 0 0 3px rgba(15,118,110,.08);
+    }
+
+    .form-submit {
+      margin-top: 22px;
+      width: 100%;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 22px;
+      padding: 28px;
+      text-align: center;
+      border: 1px solid #e5eeee;
+    }
+
+    .contact-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 5px;
+    }
+
+    .contact-card p {
+      color: #718684;
+      font-size: 14px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #092f2d;
+      color: #cce5e3;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* ================= MODAL ================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(4,32,30,.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 2000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 25px;
+      padding: 30px;
+      position: relative;
+      animation: showModal .25s ease;
+    }
+
+    @keyframes showModal {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .close {
+      position: absolute;
+      left: 18px;
+      top: 15px;
+      border: none;
+      background: #eef7f6;
+      color: #0f766e;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .success {
+      text-align: center;
+      padding: 20px 5px;
+    }
+
+    .success-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #e3f8eb;
+      color: #16834a;
+      display: grid;
+      place-items: center;
+      font-size: 35px;
+      margin: auto auto 15px;
+    }
+
+    /* ================= TOAST ================= */
+
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #153f3c;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: .3s;
+      z-index: 3000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        right: 15px;
+        left: 15px;
+        background: white;
+        padding: 20px;
+        border-radius: 18px;
+        box-shadow: 0 15px 40px rgba(0,0,0,.1);
+        flex-direction: column;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .services-grid,
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid,
+      .contact-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      section {
+        padding: 65px 15px;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .doctor-card {
+        padding: 25px 15px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="navbar">
+
+      <a href="#home" class="logo">
+        <div class="logo-icon">⚕</div>
+        <div>
+          الدكتور قرناش محمد
+          <small>طبيب عام</small>
+        </div>
+      </a>
+
+      <nav id="nav">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#about">عن الطبيب</a>
+        <a href="#appointment">حجز موعد</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-container">
+
+        <div>
+
+          <div class="badge">
+            ✓ رعاية صحية موثوقة
+          </div>
+
+          <h1>
+            صحتك أولويتنا مع
+            <span>الدكتور قرناش محمد</span>
+          </h1>
+
+          <p>
+            طبيب عام يقدم رعاية صحية شاملة ومتابعة طبية باهتمام،
+            مع الحرص على توفير تجربة مريحة واحترافية لكل مريض.
+          </p>
+
+          <div class="buttons">
+
+            <button class="btn btn-primary"
+                    onclick="openAppointment()">
+              📅 احجز موعدًا
+            </button>
+
+            <a class="btn btn-light"
+               href="tel:+213000000000">
+              📞 اتصل بالطبيب
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="doctor-card">
+
+          <div class="doctor-avatar">
+            👨‍⚕️
+          </div>
+
+          <h2>الدكتور قرناش محمد</h2>
+
+          <p>طبيب عام</p>
+
+          <div class="status">
+            ● استقبال المرضى
+          </div>
+
+          <div style="margin-top:25px">
+
+            <button
+              class="btn btn-primary"
+              style="width:100%"
+              onclick="scrollToSection('services')">
+              اكتشف الخدمات
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services" class="services">
+
+      <div class="section-container">
+
+        <div class="section-title">
+          <span>الخدمات الطبية</span>
+          <h2>كيف يمكننا مساعدتك؟</h2>
+          <p>
+            خدمات طبية عامة مصممة لتوفير رعاية صحية مريحة ومنظمة.
+          </p>
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service">
+            <div class="service-icon">🩺</div>
+            <h3>الفحص الطبي العام</h3>
+            <p>
+              فحص عام للحالة الصحية وتقييم الأعراض والحالة الطبية.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">❤️</div>
+            <h3>متابعة الأمراض المزمنة</h3>
+            <p>
+              متابعة دورية للحالات المزمنة وفق الخطة الطبية المناسبة.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">🩸</div>
+            <h3>قياس الضغط والسكر</h3>
+            <p>
+              متابعة المؤشرات الحيوية الأساسية أثناء الزيارة الطبية.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">👨‍👩‍👧</div>
+            <h3>الرعاية العائلية</h3>
+            <p>
+              رعاية صحية عامة لمختلف أفراد الأسرة.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">📋</div>
+            <h3>المتابعة الطبية</h3>
+            <p>
+              متابعة تطور الحالة الصحية وتنظيم الزيارات القادمة.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">💬</div>
+            <h3>استشارة أولية</h3>
+            <p>
+              الاستماع إلى المريض وتوجيهه نحو الخطوة الطبية المناسبة.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+      <div class="section-container">
+
+        <div class="section-title">
+          <span>عن الطبيب</span>
+          <h2>رعاية مبنية على الثقة</h2>
+        </div>
+
+        <div class="about-grid">
+
+          <div>
+
+            <h2 style="font-size:34px;margin-bottom:15px">
+              الدكتور قرناش محمد
+            </h2>
+
+            <p style="color:#66807e">
+              طبيب عام يهتم بتقديم رعاية صحية منظمة
+              وتجربة مريحة للمريض منذ لحظة حجز الموعد
+              وحتى المتابعة الطبية.
+            </p>
+
+            <div class="features">
+
+              <div class="feature">
+                <div class="check">✓</div>
+                <span>مواعيد منظمة</span>
+              </div>
+
+              <div class="feature">
+                <div class="check">✓</div>
+                <span>اهتمام براحة المريض</span>
+              </div>
+
+              <div class="feature">
+                <div class="check">✓</div>
+                <span>متابعة صحية مستمرة</span>
+              </div>
+
+              <div class="feature">
+                <div class="check">✓</div>
+                <span>تجربة رقمية سهلة</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="about-box">
+
+            <h3>لماذا استخدام التطبيق؟</h3>
+
+            <p style="color:#718684;margin-top:10px">
+              يمكنك من خلال الموقع الوصول بسرعة إلى معلومات
+              الطبيب والخدمات وحجز موعد والتواصل مع العيادة.
+            </p>
+
+            <button
+              class="btn btn-primary"
+              style="margin-top:20px"
+              onclick="openAppointment()">
+              احجز موعدك الآن
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= APPOINTMENT ================= -->
+
+    <section id="appointment" class="appointment">
+
+      <div class="section-container">
+
+        <div class="section-title">
+
+          <span>الحجز الإلكتروني</span>
+
+          <h2>احجز موعدك بسهولة</h2>
+
+          <p>
+            املأ المعلومات التالية وسنقوم بتسجيل طلب الموعد.
+          </p>
+
+        </div>
+
+
+        <div class="form-box">
+
+          <form id="appointmentForm">
+
+            <div class="form-grid">
+
+              <div class="field">
+                <label>الاسم الكامل</label>
+                <input
+                  id="patientName"
+                  type="text"
+                  placeholder="اكتب اسمك الكامل"
+                  required>
+              </div>
+
+
+              <div class="field">
+                <label>رقم الهاتف</label>
+                <input
+                  id="patientPhone"
+                  type="tel"
+                  placeholder="مثال: 0550000000"
+                  required>
+              </div>
+
+
+              <div class="field">
+                <label>تاريخ الموعد</label>
+                <input
+                  id="appointmentDate"
+                  type="date"
+                  required>
+              </div>
+
+
+              <div class="field">
+                <label>الوقت المناسب</label>
+
+                <select id="appointmentTime" required>
+
+                  <option value="">
+                    اختر الوقت
+                  </option>
+
+                  <option>09:00</option>
+                  <option>09:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>14:00</option>
+                  <option>14:30</option>
+                  <option>15:00</option>
+                  <option>15:30</option>
+                  <option>16:00</option>
+                  <option>16:30</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>نوع الزيارة</label>
+
+                <select id="visitType" required>
+
+                  <option value="">
+                    اختر نوع الزيارة
+                  </option>
+
+                  <option>فحص طبي عام</option>
+                  <option>متابعة طبية</option>
+                  <option>متابعة مرض مزمن</option>
+                  <option>استشارة أولية</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>ملاحظات إضافية</label>
+
+                <textarea
+                  id="notes"
+                  rows="4"
+                  placeholder="اكتب ملاحظاتك إن وجدت"></textarea>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="btn btn-primary form-submit"
+              type="submit">
+
+              ✓ تأكيد طلب الموعد
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+      <div class="section-container">
+
+        <div class="section-title">
+
+          <span>تواصل معنا</span>
+
+          <h2>نحن هنا لمساعدتك</h2>
+
+          <p>
+            يمكنك التواصل مع العيادة من خلال الخيارات التالية.
+          </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+          <div class="contact-card">
+
+            <div class="contact-icon">📞</div>
+
+            <h3>الهاتف</h3>
+
+            <p>000 000 000</p>
+
+            <a
+              class="btn btn-light"
+              style="margin-top:15px"
+              href="tel:+213000000000">
+
+              اتصال
+
+            </a>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <div class="contact-icon">💬</div>
+
+            <h3>واتساب</h3>
+
+            <p>تواصل معنا عبر واتساب</p>
+
+            <button
+              class="btn btn-light"
+              style="margin-top:15px"
+              onclick="openWhatsApp()">
+
+              فتح واتساب
+
+            </button>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <div class="contact-icon">📍</div>
+
+            <h3>موقع العيادة</h3>
+
+            <p>يمكن إضافة عنوان العيادة هنا</p>
+
+            <button
+              class="btn btn-light"
+              style="margin-top:15px"
+              onclick="openLocation()">
+
+              فتح الخريطة
+
+            </button>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      <strong>الدكتور قرناش محمد</strong>
+      — جميع الحقوق محفوظة
+    </p>
+
+  </footer>
+
+
+  <!-- ================= MODAL ================= -->
+
+  <div class="modal" id="appointmentModal">
+
+    <div class="modal-content">
+
+      <button
+        class="close"
+        onclick="closeAppointment()">
+        ×
+      </button>
+
+      <div id="modalBody">
+
+        <h2 style="margin-bottom:10px">
+          حجز موعد
+        </h2>
+
+        <p style="color:#718684">
+          سيتم نقلك إلى نموذج الحجز.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= TOAST ================= -->
+
+  <div class="toast" id="toast"></div>
+
+
+  <script>
+
+    /* ================= MENU ================= */
+
+    function toggleMenu() {
+
+      document
+        .getElementById("nav")
+        .classList
+        .toggle("open");
+
+    }
+
+
+    /* ================= SCROLL ================= */
+
+    function scrollToSection(id) {
+
+      document
+        .getElementById(id)
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* ================= APPOINTMENT ================= */
+
+    function openAppointment() {
+
+      document
+        .getElementById("appointmentModal")
+        .classList
+        .add("active");
+
+      setTimeout(() => {
+
+        closeAppointment();
+
+        scrollToSection("appointment");
+
+      }, 600);
+
+    }
+
+
+    function closeAppointment() {
+
+      document
+        .getElementById("appointmentModal")
+        .classList
+        .remove("active");
+
+    }
+
+
+    /* ================= FORM ================= */
+
+    const form =
+      document.getElementById("appointmentForm");
+
+
+    form.addEventListener("submit", function(e) {
+
+      e.preventDefault();
+
+
+      const name =
+        document.getElementById("patientName").value;
+
+      const phone =
+        document.getElementById("patientPhone").value;
+
+      const date =
+        document.getElementById("appointmentDate").value;
+
+      const time =
+        document.getElementById("appointmentTime").value;
+
+
+      if (!name || !phone || !date || !time) {
+
+        showToast("يرجى ملء جميع المعلومات المطلوبة");
+
+        return;
+
+      }
+
+
+      const appointment = {
+
+        name: name,
+
+        phone: phone,
+
+        date: date,
+
+        time: time,
+
+        type:
+          document.getElementById("visitType").value,
+
+        notes:
+          document.getElementById("notes").value,
+
+        createdAt:
+          new Date().toISOString()
+
+      };
+
+
+      /*
+       * في النسخة الحالية يتم حفظ الطلب
+       * محليًا في المتصفح.
+       *
+       * عند إضافة Backend وقاعدة بيانات،
+       * سيتم إرسال هذه البيانات إلى الخادم.
+       */
+
+      const appointments =
+        JSON.parse(
+          localStorage.getItem("appointments") || "[]"
+        );
+
+
+      appointments.push(appointment);
+
+
+      localStorage.setItem(
+        "appointments",
+        JSON.stringify(appointments)
+      );
+
+
+      form.reset();
+
+
+      showToast(
+        "تم تسجيل طلب الموعد بنجاح ✓"
+      );
+
+    });
+
+
+    /* ================= WHATSAPP ================= */
+
+    function openWhatsApp() {
+
+      /*
+       * استبدل الرقم بالرقم الحقيقي
+       * بصيغة دولية بدون +
+       *
+       * مثال الجزائر:
+       * 213550000000
+       */
+
+      const phone = "213000000000";
+
+      const message =
+        encodeURIComponent(
+          "السلام عليكم، أريد الاستفسار عن موعد مع الدكتور قرناش محمد."
+        );
+
+      window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+      );
+
+    }
+
+
+    /* ================= LOCATION ================= */
+
+    function openLocation() {
+
+      /*
+       * استبدل هذا الرابط بموقع العيادة
+       * الحقيقي في Google Maps.
+       */
+
+      const location =
+        "https://www.google.com/maps";
+
+      window.open(
+        location,
+        "_blank"
+      );
+
+    }
+
+
+    /* ================= TOAST ================= */
+
+    function showToast(message) {
+
+      const toast =
+        document.getElementById("toast");
+
+      toast.textContent = message;
+
+      toast.classList.add("show");
+
+
+      setTimeout(() => {
+
+        toast.classList.remove("show");
+
+      }, 3500);
+
+    }
+
+
+    /* ================= YEAR ================= */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+    /* ================= DATE ================= */
+
+    const dateInput =
+      document.getElementById("appointmentDate");
+
+    const today =
+      new Date().toISOString().split("T")[0];
+
+    dateInput.min = today;
+
+
+    /* ================= CLOSE MODAL ================= */
+
+    document
+      .getElementById("appointmentModal")
+      .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+
+          closeAppointment();
+
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>
